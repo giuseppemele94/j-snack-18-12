@@ -10,42 +10,42 @@
 
 
 
-const automobili = [
-    { marca: "Fiat", modello: "Panda", alimentazione: "benzina" },
-    { marca: "Volkswagen", modello: "Golf", alimentazione: "diesel" },
-    { marca: "Toyota", modello: "Yaris", alimentazione: "benzina" },
-    { marca: "Renault", modello: "Clio", alimentazione: "gpl" },
-    { marca: "Tesla", modello: "Model 3", alimentazione: "elettrico" },
-    { marca: "Opel", modello: "Corsa", alimentazione: "metano" },
-    { marca: "Ford", modello: "Focus", alimentazione: "diesel" },
-    { marca: "Hyundai", modello: "Kona", alimentazione: "elettrico" },
-    { marca: "Dacia", modello: "Duster", alimentazione: "gpl" },
-    { marca: "BMW", modello: "Serie 1", alimentazione: "benzina" }
-];
+// const automobili = [
+//     { marca: "Fiat", modello: "Panda", alimentazione: "benzina" },
+//     { marca: "Volkswagen", modello: "Golf", alimentazione: "diesel" },
+//     { marca: "Toyota", modello: "Yaris", alimentazione: "benzina" },
+//     { marca: "Renault", modello: "Clio", alimentazione: "gpl" },
+//     { marca: "Tesla", modello: "Model 3", alimentazione: "elettrico" },
+//     { marca: "Opel", modello: "Corsa", alimentazione: "metano" },
+//     { marca: "Ford", modello: "Focus", alimentazione: "diesel" },
+//     { marca: "Hyundai", modello: "Kona", alimentazione: "elettrico" },
+//     { marca: "Dacia", modello: "Duster", alimentazione: "gpl" },
+//     { marca: "BMW", modello: "Serie 1", alimentazione: "benzina" }
+// ];
 
-console.log(automobili);
+// console.log(automobili);
 
 
-// METODO FOR EACH 
-const autoBenzina = [];
-const autoDiesel = [];
-const autoAltro = [];
+// // METODO FOR EACH 
+// const autoBenzina = [];
+// const autoDiesel = [];
+// const autoAltro = [];
 
-automobili.forEach((automobile) => {
-if(automobile.alimentazione === "benzina") {
-    autoBenzina.push(automobile) ; 
-}
-else if (automobile.alimentazione === "diesel") {
-    autoDiesel.push(automobile);
-}
-else {
-    autoAltro.push(automobile);
-}
-}); 
+// automobili.forEach((automobile) => {
+// if(automobile.alimentazione === "benzina") {
+//     autoBenzina.push(automobile) ; 
+// }
+// else if (automobile.alimentazione === "diesel") {
+//     autoDiesel.push(automobile);
+// }
+// else {
+//     autoAltro.push(automobile);
+// }
+// }); 
 
-console.log("Auto a benzina :" ,autoBenzina);
-console.log("Auto a diesel :",autoDiesel);
-console.log("Altre auto :",autoAltro); 
+// console.log("Auto a benzina :" ,autoBenzina);
+// console.log("Auto a diesel :",autoDiesel);
+// console.log("Altre auto :",autoAltro); 
 
 
 //METODO FILTER 
@@ -91,3 +91,42 @@ console.log("Altre auto :",autoAltro);
 //   console.log("Auto a benzina :" ,autoBenzina);
 // console.log("Auto a diesel :",autoDiesel);
 // console.log("Altre auto :",autoAltro); 
+
+/* ESERCIZIO 02
+A partire da un array di stringhe, 
+crea un secondo array formattando le stringhe del primo array in minuscolo e con l’iniziale maiuscola.
+[‘Pippo', 'Pluto, 'Paperino']; */
+
+const nomi = [
+  "mArIo",
+  "LUCA",
+  "giUseppe",
+  "aNnA",
+  "fRaNcEsCa",
+  "vaLeNtInA",
+  "roBeRtO",
+  "sImOnE"
+];
+
+// METODO CON FOR EACH 
+const nomiFormattati = []; 
+
+nomi.forEach((nome) => {
+
+const nomeMinuscolo = nome.toLowerCase();
+const nomeFormattato = nomeMinuscolo[0].toUpperCase() + nomeMinuscolo.slice(1); //slice prende la stringa dal carattere in posizione 1 fino alla fine 
+nomiFormattati.push(nomeFormattato);
+
+});
+
+console.log(nomiFormattati); 
+
+//METODO CON MAP 
+
+// const nomiFormattati = nomi.map((nome)=> {
+
+// const nomeMinuscolo = nome.toLowerCase(); 
+// return nomeMinuscolo[0].toUpperCase() + nomeMinuscolo.slice(1);
+
+// });
+// console.log(nomiFormattati); 
