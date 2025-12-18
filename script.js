@@ -97,29 +97,29 @@ A partire da un array di stringhe,
 crea un secondo array formattando le stringhe del primo array in minuscolo e con l’iniziale maiuscola.
 [‘Pippo', 'Pluto, 'Paperino']; */
 
-const nomi = [
-  "mArIo",
-  "LUCA",
-  "giUseppe",
-  "aNnA",
-  "fRaNcEsCa",
-  "vaLeNtInA",
-  "roBeRtO",
-  "sImOnE"
-];
+// const nomi = [
+//   "mArIo",
+//   "LUCA",
+//   "giUseppe",
+//   "aNnA",
+//   "fRaNcEsCa",
+//   "vaLeNtInA",
+//   "roBeRtO",
+//   "sImOnE"
+// ];
 
-// METODO CON FOR EACH 
-const nomiFormattati = []; 
+// // METODO CON FOR EACH 
+// const nomiFormattati = []; 
 
-nomi.forEach((nome) => {
+// nomi.forEach((nome) => {
 
-const nomeMinuscolo = nome.toLowerCase();
-const nomeFormattato = nomeMinuscolo[0].toUpperCase() + nomeMinuscolo.slice(1); //slice prende la stringa dal carattere in posizione 1 fino alla fine 
-nomiFormattati.push(nomeFormattato);
+// const nomeMinuscolo = nome.toLowerCase();
+// const nomeFormattato = nomeMinuscolo[0].toUpperCase() + nomeMinuscolo.slice(1); //slice prende la stringa dal carattere in posizione 1 fino alla fine 
+// nomiFormattati.push(nomeFormattato);
 
-});
+// });
 
-console.log(nomiFormattati); 
+// console.log(nomiFormattati); 
 
 //METODO CON MAP 
 
@@ -130,3 +130,32 @@ console.log(nomiFormattati);
 
 // });
 // console.log(nomiFormattati); 
+
+/* ESERCIZIO 03
+Crea un array di oggetti che rappresentano delle persone. Ogni persona ha un nome, un cognome e un’età.
+Crea quindi un nuovo array 
+inserendo, per ogni persona, una frase con il nome e cognome e l’indicazione se può guidare, in base all’età.
+
+* */
+const persone = [
+  { nome: "Mario",    cognome: "Rossi",     eta: 17 },
+  { nome: "Luca",     cognome: "Bianchi",   eta: 22 },
+  { nome: "Anna",     cognome: "Verdi",     eta: 30 },
+  { nome: "Giulia",   cognome: "Neri",      eta: 15 },
+  { nome: "Francesco",cognome: "Gallo",     eta: 18 },
+  { nome: "Sara",     cognome: "Conti",     eta: 27 }
+];
+
+const newArray = persone.map((persona) => {
+let messaggio =""; 
+if(persona.eta < 18) {
+     messaggio = "Non può guidare";
+}
+else {
+     messaggio = "Può guidare";
+}
+return `${persona.nome} ${persona.cognome} ${messaggio}` ; 
+
+});
+
+console.log(newArray); 
