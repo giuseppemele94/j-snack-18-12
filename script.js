@@ -1,9 +1,14 @@
 
-/**
+/** ESERCIZIO 01 
  * Crea un array composto da 10 automobili.
  * Ogni oggetto automobile avrà: marca, modello, alimentazione
  * (benzina, diesel, gpl, elettrico, metano)
- */
+*  Dividi le automobili in 3 array separati: 
+ * nel primo array solo le auto a benzina, 
+ * nel secondo solo le auto a diesel, 
+ * nel terzo il resto delle auto. Infine stampa separatamente i 3 array. */
+
+
 
 const automobili = [
     { marca: "Fiat", modello: "Panda", alimentazione: "benzina" },
@@ -20,16 +25,12 @@ const automobili = [
 
 console.log(automobili);
 
-/*  Dividi le automobili in 3 array separati: 
- * nel primo array solo le auto a benzina, 
- * nel secondo solo le auto a diesel, 
- * nel terzo il resto delle auto. Infine stampa separatamente i 3 array. */
 
-
-//FOR EACH 
+// METODO FOR EACH 
 const autoBenzina = [];
 const autoDiesel = [];
-const autoAltro = []; 
+const autoAltro = [];
+
 automobili.forEach((automobile) => {
 if(automobile.alimentazione === "benzina") {
     autoBenzina.push(automobile) ; 
@@ -46,7 +47,8 @@ console.log("Auto a benzina :" ,autoBenzina);
 console.log("Auto a diesel :",autoDiesel);
 console.log("Altre auto :",autoAltro); 
 
-//FILTER 
+
+//METODO FILTER 
 // const autoBenzina = automobili.filter((automobile) =>
 //     automobile.alimentazione === "benzina");
 
@@ -63,3 +65,29 @@ console.log("Altre auto :",autoAltro);
 // console.log("Auto a benzina :" ,autoBenzina);
 // console.log("Auto a diesel :",autoDiesel);
 //  console.log("Altre auto :",autoAltro); 
+
+
+//FOR CLASSICO
+
+//  const autoBenzina = [];
+//  const autoDiesel = [];
+//  const autoAltro = [];
+
+//  for (let i= 0; i< automobili.length; i++){
+//     const auto = automobili[i]; 
+
+//     if(auto.alimentazione ==="benzina") {
+//         autoBenzina.push(auto);
+//     }
+//     else if (auto.alimentazione ==="diesel") {
+//         autoDiesel.push(auto);
+//     }
+//     else {
+//         autoAltro.push(auto); 
+//     }
+    
+//  }
+
+//   console.log("Auto a benzina :" ,autoBenzina);
+// console.log("Auto a diesel :",autoDiesel);
+// console.log("Altre auto :",autoAltro); 
